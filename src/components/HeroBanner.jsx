@@ -16,7 +16,7 @@ const HeroBanner = () => {
         Check out the most effective exercises personalized to you
         </div>
         <div className="">
-            <a href="#exercise" className='mt-[45px] w-[220px]  flex text-center bg-orangee p-[14px] text-[22px] text-white rounded-[4px]'>Explore Exercises</a>
+            <a href="#exercise" className='mt-[45px] w-[220px]  flex text-center bg-orangee p-[14px] text-[22px] text-white rounded-[4px] btn-orange'>Explore Exercises</a>
         </div>
         <div className="font-semibold text-orangee opacity-[0.1] block text-[200px]">Exercise</div>
         <img src={HeroBannerImage} alt="HeroBannerImage" className='HeroBannerImage'/>
