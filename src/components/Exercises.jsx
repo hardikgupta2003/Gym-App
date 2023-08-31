@@ -10,35 +10,34 @@ const Exercises = ({bodyPart,exercises,setExercises}) => {
   const [currentPage,setCurrentPage]=useState(1);
   const [exercisesPerPage]=useState(9);
 
-  useEffect(()=>{
-    const fetchExerciseData= async () =>{
-      let exerciseData=[];
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      let exercisesData = [];
 
-      if(bodyPart=='all'){
-          exerciseData=await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+      if (bodyPart === 'all') {
+        exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+      } else {
+        exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
       }
-      else{
-        exerciseData= await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`)
-      }
-      setExercises(exerciseData);
 
+      setExercises(exercisesData);
     };
-    fetchExerciseData();
-  },[bodyPart]);
 
+    fetchExercisesData();
+  }, [bodyPart]);
   // pagination
   const indexOfLastExercise =currentPage * exercisesPerPage;
   const indexOfFirstExercise=
   indexOfLastExercise - exercisesPerPage;
 
-  const currentExercises= exercises.slice(indexOfFirstExercise.indexOfLastExercise);
-  function paginate (event,value){
+  const currentExercises= exercises.slice(indexOfFirstExercise,indexOfLastExercise);
+  
+  const paginate = (event, value) => {
     setCurrentPage(value);
-    window.scrollTo({Top:1800,behavior:'smooth'});
-  }
-  if(!currentExercises.length){
-    return <Loader/>;
-  }
+
+    window.scrollTo({ top: 1800, behavior: 'smooth' });
+  };
+  if (!currentExercises.length) return <Loader />;
   return (
     <div id='exercises' className=' mt-[50px]  lg:mt-[109px] p-[20px]'>
 
@@ -55,17 +54,17 @@ const Exercises = ({bodyPart,exercises,setExercises}) => {
         
       </div>
 
-      <div className=" lg:mt-[114px] sm:mt-[70px] w-full flex items-center">
-        {exercises.length>9 && (
+      <div className=" lg:mt-[114px] sm:mt-[70px] flex items-center">
+      {exercises.length > 9 && (
           <Pagination
-          color="standard"
-          shape="rounded"
-          defaultPage={1}
-          count={Math.ceil(exercises.length / exercisesPerPage)}
-          page={currentPage}
-          onChange={paginate}
-          size="large"
-        />
+            color="standard"
+            shape="rounded"
+            defaultPage={1}
+            count={Math.ceil(exercises.length / exercisesPerPage)}
+            page={currentPage}
+            onChange={paginate}
+            size="large"
+          />
         )}
       </div>
     </div>
