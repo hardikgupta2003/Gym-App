@@ -1,8 +1,15 @@
+import Icon from '../assets/icons/gym.png'
 import React from 'react'
 
-const BodyPart = () => {
+const BodyPart = ({ item, setBodyPart, bodyPart }) => {
   return (
-    <div>BodyPart</div>
+    <div>
+      <button>
+        <img src={Icon} alt="" />
+        <div className="">{item}</div>
+      </button>
+
+    </div>
   )
 }
 
