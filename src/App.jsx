@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div className="w-[400px] lg:w-[1488px] m-auto">
       <Navbar/>
-      <Routes>
+      <Routes basename="/">
         <Route path="/" element={<Home/>}/>
         <Route path="/exercise/:id" element={<ExerciseDetail/>}/>
       </Routes>

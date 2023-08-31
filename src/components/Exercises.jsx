@@ -54,9 +54,10 @@ const Exercises = ({bodyPart,exercises,setExercises}) => {
         
       </div>
 
-      <div className=" lg:mt-[114px] sm:mt-[70px] flex items-center">
+      <div className=" lg:mt-[114px] sm:mt-[70px] flex items-center justify-center">
       {exercises.length > 9 && (
           <Pagination
+          
             color="standard"
             shape="rounded"
             defaultPage={1}

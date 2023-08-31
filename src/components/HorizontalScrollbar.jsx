@@ -15,31 +15,28 @@ const LeftArrow =()=>{
   );
 };
 const RightArrow =()=>{
-  const {scrollPrev}=useContext(VisibilityContext);
+  const {scrollNext}=useContext(VisibilityContext);
 
   return (
-    <div onClick={scrollPrev()} className="right-arrow">
+    <div onClick={scrollNext()} className="right-arrow">
       <img src={rightArrowIcon} alt="" />
     </div>
   );
 };
 
-const HorizontalScrollbar = ({data,bodyParts,setBodyParts,bodyPart}) => {
-  return (
-   < ScrollMenu>
+const HorizontalScrollbar = ({data,bodyParts,setBodyPart,bodyPart}) => 
+  (
+   < ScrollMenu  LeftArrow={LeftArrow} RightArrow={RightArrow}>
    {
     data.map((item)=>(
       <div key={item.id || item}
        itemID={item.id || item}
       title={item.id || item} className="my-0 mx-[40px]">
-        {
-          bodyParts ? <BodyPart /> : <ExerciseCard/>
-        }
+        {bodyParts ? <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} /> : <ExerciseCard exercise={item} /> }
       </div>
     ))
    }
    </ScrollMenu>
   )
-}
 
 export default HorizontalScrollbar

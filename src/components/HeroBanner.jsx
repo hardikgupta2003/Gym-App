@@ -4,7 +4,7 @@ import '../index.css'
 
 const HeroBanner = () => {
   return (
-    <div className=' xl:mt-[212px] md:mt-[212px] sm:ml-[50px] relative p-[20px]'>
+    <div className=' lg:mt-[212px] md:mt-[212px] sm:ml-[50px] relative p-[20px]'>
         <div className="text-orangee font-semibold text-[26px]">
             Fitness Club
         </div>
@@ -18,7 +18,7 @@ const HeroBanner = () => {
         <div className="">
             <a href="#exercise" className='mt-[45px] w-[220px]  flex text-center bg-orangee p-[14px] text-[22px] text-white rounded-[4px] btn-orange'>Explore Exercises</a>
         </div>
-        <div className="font-semibold text-orangee opacity-[0.1] block text-[200px]">Exercise</div>
+        <div className="font-semibold text-orangee opacity-[0.1] lg:block sm:hidden text-[200px]">Exercise</div>
         <img src={HeroBannerImage} alt="HeroBannerImage" className='HeroBannerImage'/>
     </div>
   )
