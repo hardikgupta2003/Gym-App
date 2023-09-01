@@ -26,7 +26,7 @@ const RightArrow =()=>{
 
 const HorizontalScrollbar = ({data,bodyParts,setBodyPart,bodyPart}) => 
   (
-   < ScrollMenu  LeftArrow={LeftArrow} RightArrow={RightArrow}>
+    <div className="flex ">   < ScrollMenu  LeftArrow={LeftArrow} RightArrow={RightArrow} >
    {
     data.map((item)=>(
       <div key={item.id || item}
@@ -36,7 +36,8 @@ const HorizontalScrollbar = ({data,bodyParts,setBodyPart,bodyPart}) =>
       </div>
     ))
    }
-   </ScrollMenu>
+   </ScrollMenu></div>
+
   )
 
 export default HorizontalScrollbar

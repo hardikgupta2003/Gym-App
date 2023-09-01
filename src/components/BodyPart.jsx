@@ -15,8 +15,8 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
       window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
     }}
   >
-        <img src={Icon} alt="" />
-        <div className="">{item}</div>
+        <img src={Icon} alt="icon" className='w-[40px] h-[40px]' />
+        <div className="uppercase font-bold text-darkred text-[24px]">{item}</div>
      
    </Stack>
   )

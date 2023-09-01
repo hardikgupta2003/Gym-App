@@ -2,12 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Josefin Sans';
+  background-color: #FFFAFB;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+::-webkit-scrollbar {
+  width: 0px;
+}
 body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
